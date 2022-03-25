@@ -1,11 +1,13 @@
-pragma solidity 0.8.4;
 // SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-// learn more: https://docs.openzeppelin.com/contracts/3.x/erc20
+import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract YourToken is ERC20 {
-    constructor() ERC20("Gold", "GLD") {
-        //_mint( ~~~YOUR FRONTEND ADDRESS HERE~~~~ , 1000 * 10 ** 18);
+contract YourToken is ERC20, Ownable {
+    constructor() ERC20("VUADUTOKEN", "VDT") {
+        _mint(msg.sender, 10000 * 10 ** decimals());
     }
+
+    
 }

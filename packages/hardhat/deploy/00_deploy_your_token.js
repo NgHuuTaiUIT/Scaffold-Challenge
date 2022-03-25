@@ -16,10 +16,13 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
 
   const yourToken = await ethers.getContract("YourToken", deployer);
 
-  // Todo: transfer tokens to frontend address
-  // const result = await yourToken.transfer("0x18fFE4dADcCe63A074Ef9cfe327cAb9AD4Ad9f76", ethers.utils.parseEther("1000") );
+  // TODO: transfer tokens to frontend address
+  // const result = await yourToken.transfer(
+  //   "0xeDAE3701412E65359A9eFb03CDfdA98dbdA630d5",
+  //   ethers.utils.parseEther("1000")
+  // );
 
-  // ToDo: To take ownership of yourContract using the ownable library uncomment next line and add the
+  // TODO: To take ownership of yourContract using the ownable library uncomment next line and add the
   // address you want to be the owner.
   // yourContract.transferOwnership(YOUR_ADDRESS_HERE);
 
@@ -43,20 +46,20 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
   //  LibraryName: **LibraryAddress**
   // });
 
-  // ToDo: Verify your contract with Etherscan for public chains
-  // if (chainId !== "31337") {
-  //   try {
-  //     console.log(" 🎫 Verifing Contract on Etherscan... ");
-  //     await sleep( 5000 ) // wait 5 seconds for deployment to propagate
-  //     await run("verify:verify", {
-  //       address: yourToken.address,
-  //       contract: "contracts/YourToken.sol:YourToken",
-  //       contractArguments: [],
-  //     });
-  //   } catch (e) {
-  //     console.log(" ⚠️ Failed to verify contract on Etherscan ");
-  //   }
-  // }
+  // TODO: Verify your contract with Etherscan for public chains
+  if (chainId !== "31337") {
+    try {
+      console.log(" 🎫 Verifing Contract on Etherscan... ");
+      await sleep(5000); // wait 5 seconds for deployment to propagate
+      await run("verify:verify", {
+        address: yourToken.address,
+        contract: "contracts/YourToken.sol:YourToken",
+        contractArguments: [],
+      });
+    } catch (e) {
+      console.log(" ⚠️ Failed to verify contract on Etherscan ");
+    }
+  }
 };
 
 function sleep(ms) {
