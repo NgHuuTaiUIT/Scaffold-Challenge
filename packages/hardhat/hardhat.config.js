@@ -26,9 +26,9 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "localhost";
+const defaultNetwork = "ropsten";
 
-const mainnetGwei = 21;
+const mainnetGwei = 115;
 
 function mnemonic() {
   try {
@@ -128,12 +128,12 @@ module.exports = {
       },
     },
     ropsten: {
-      url: "https://ropsten.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", // <---- YOUR INFURA ID! (or it won't work)
+      url: "https://ropsten.infura.io/v3/101928425dae484389c80e3f9f1c8d82", // <---- YOUR INFURA ID! (or it won't work)
 
       //      url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXXXX/eth/ropsten",// <---- YOUR MORALIS ID! (not limited to infura)
 
       accounts: {
-        mnemonic: mnemonic(),
+        "616684391af421d64d318662e2e5ddc2a27c76128ab1a818e58983b221dfe2c8"
       },
     },
     goerli: {
